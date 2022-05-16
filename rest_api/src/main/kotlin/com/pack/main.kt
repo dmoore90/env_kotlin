@@ -9,11 +9,3 @@ import org.http4k.routing.routes
 import org.http4k.server.SunHttp
 import org.http4k.server.asServer
 
-fun HelloWorld(): HttpHandler {
-    return routes("/" bind Method.GET to { Response(OK).body("hello world!")})
-}
-
-fun main() {
-    HelloWorld().asServer(SunHttp(8080)).start()
-    println("running port 8080")
-}
